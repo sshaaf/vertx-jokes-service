@@ -1,0 +1,55 @@
+= Vertx-jokes
+
+image:https://img.shields.io/badge/vert.x-4.1.2-purple.svg[link="https://vertx.io"]
+
+This application was generated using http://start.vertx.io
+
+== Building
+
+```
+# To launch your tests:
+./mvnw clean test
+
+# To package your application:
+./mvnw clean package
+
+# To run your application:
+./mvnw clean compile exec:java
+```
+
+
+#### For OpenShift
+
+```
+# Below command will create your OpenShift resource descriptors.
+mvn clean oc:resource -Popenshift
+
+# Now start S2I build  by hitting the build goal.
+mvn package oc:build -Popenshift
+
+# Below command will deploy your application on OpenShift cluster.
+mvn oc:deploy -Popenshift
+```
+
+#### For Kubernetes
+
+```
+# Below command will create your Kubernetes resource descriptors.
+mvn clean k8s:resource -Pkubernetes
+
+# Now start docker build  by hitting the build goal.
+mvn package k8s:build -Pkubernetes
+
+# Below command will deploy your application on Kubernetes cluster.
+mvn k8s:deploy -Pkubernetes
+```
+
+
+== Help
+
+* https://vertx.io/docs/[Vert.x Documentation]
+* https://stackoverflow.com/questions/tagged/vert.x?sort=newest&pageSize=15[Vert.x Stack Overflow]
+* https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
+* https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
+
+
