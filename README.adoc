@@ -17,34 +17,6 @@ This application was generated using http://start.vertx.io
 ./mvnw clean compile exec:java
 ```
 
-
-#### For OpenShift
-
-```
-# Below command will create your OpenShift resource descriptors.
-mvn clean oc:resource -Popenshift
-
-# Now start S2I build  by hitting the build goal.
-mvn package oc:build -Popenshift
-
-# Below command will deploy your application on OpenShift cluster.
-mvn oc:deploy -Popenshift
-```
-
-#### For Kubernetes
-
-```
-# Below command will create your Kubernetes resource descriptors.
-mvn clean k8s:resource -Pkubernetes
-
-# Now start docker build  by hitting the build goal.
-mvn package k8s:build -Pkubernetes
-
-# Below command will deploy your application on Kubernetes cluster.
-mvn k8s:deploy -Pkubernetes
-```
-
-
 Building a docker image with Eclipse Temurin
 ```
 docker build -t com.example/vertx-jokes-jar -f docker-maven/Dockerfile .
@@ -72,6 +44,35 @@ content-type: application/json; charset=utf-8
     }
 }
 
+```
+
+
+Using JKube to deploy to Openshift and Kube does not use temurin for this.
+
+#### For OpenShift
+
+```
+# Below command will create your OpenShift resource descriptors.
+mvn clean oc:resource -Popenshift
+
+# Now start S2I build  by hitting the build goal.
+mvn package oc:build -Popenshift
+
+# Below command will deploy your application on OpenShift cluster.
+mvn oc:deploy -Popenshift
+```
+
+#### For Kubernetes
+
+```
+# Below command will create your Kubernetes resource descriptors.
+mvn clean k8s:resource -Pkubernetes
+
+# Now start docker build  by hitting the build goal.
+mvn package k8s:build -Pkubernetes
+
+# Below command will deploy your application on Kubernetes cluster.
+mvn k8s:deploy -Pkubernetes
 ```
 
 
