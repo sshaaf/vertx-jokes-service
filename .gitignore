@@ -63,6 +63,7 @@ local.properties
 .idea/dictionaries
 
 # Sensitive or high-churn files:
+.idea
 .idea/**/dataSources/
 .idea/**/dataSources.ids
 .idea/**/dataSources.xml
@@ -70,6 +71,9 @@ local.properties
 .idea/**/sqlDataSources.xml
 .idea/**/dynamic.xml
 .idea/**/uiDesigner.xml
+.idea/**/runConigurations.xml
+.idea/**/vcs.xml
+.idea/**/workspace.xml
 
 # Gradle:
 .idea/**/gradle.xml
