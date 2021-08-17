@@ -45,6 +45,37 @@ mvn k8s:deploy -Pkubernetes
 ```
 
 
+Building a docker image with Eclipse Temurin
+```
+docker build -t com.example/vertx-jokes-jar -f docker-maven/Dockerfile .
+```
+
+Running the container image
+```
+docker run -p 8080:8080 com.example/vertx-jokes-jar
+```
+
+Check if everything is running
+
+```
+~/g/vertx-jokes (main)> http localhost:8080/joke
+HTTP/1.1 201 Created
+content-length: 151
+content-type: application/json; charset=utf-8
+
+{
+    "type": "success",
+    "value": {
+        "categories": [],
+        "id": 616,
+        "joke": "John Doe made the sun by rubbing his hands together."
+    }
+}
+
+```
+
+
+
 == Help
 
 * https://vertx.io/docs/[Vert.x Documentation]
